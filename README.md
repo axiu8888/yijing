@@ -90,6 +90,24 @@
 
 各卦解读文首引用格式：
 
-```markdown
-![乾卦象](./images/01.png)
+```html
+<p align="center">
+  <img src="./images/01.png" alt="乾卦象" width="360" />
+</p>
+```
+
+## 导出 EPUB
+
+已生成：[`易经六十四卦解读.epub`](./易经六十四卦解读.epub)
+
+以后若改了 Markdown，在本目录重新运行：
+
+```bash
+python build_epub.py
+```
+
+也可用 [Pandoc](https://pandoc.org/)（需先安装）：
+
+```bash
+pandoc README.md 00-八卦简表.md 0*-*.md 1*-*.md 2*-*.md 3*-*.md 4*-*.md 5*-*.md 6*-*.md -o 易经六十四卦解读.epub --resource-path=. --toc --toc-depth=2 -V lang=zh-CN
 ```
